@@ -250,6 +250,8 @@ with app:
                 interactive=True,
             )
             with gr.Column():
+                download_button = gr.Button("Download")
+                            download_button.click(fn=download_from_url,inputs=[url,model_rename],outputs=[url,model_picker])
                 file_index1 = gr.Textbox(
                     label=i18n("特征检索库文件路径,为空则使用下拉的选择结果"),
                     value="",
